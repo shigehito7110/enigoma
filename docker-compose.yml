@@ -4,4 +4,5 @@ services:
     build: .
     volumes:
       - ./src/:/go/src/github.com/shigehito7110/enigoma
+      - ./staticcheck.conf:/go/src/github.com/shigehito7110/enigoma/
     tty: true

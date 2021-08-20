@@ -2,11 +2,11 @@ package enigoma
 
 import(
 	"fmt"
-	vl "github.com/shigehito7110/enigoma/validator"
+	vl "github.com/shigehito7110/enigoma/validator" //validator package for password
 )
 
 type Enigoma struct {
-	Password string
+	Password 	string
 	Validator vl.Validator
 }
 
