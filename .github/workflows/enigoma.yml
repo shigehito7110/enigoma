@@ -1,0 +1,14 @@
+name: enigoma
+
+on: [push, pull_request]
+
+jobs:
+  setup:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Set Up
+        uses: actions/checkout@v1
+
+      - name: Test
+        working-directory: ./src
+        run: go test -v
