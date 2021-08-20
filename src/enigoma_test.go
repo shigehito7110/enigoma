@@ -41,7 +41,7 @@ func TestNewEnigoma(t *testing.T) {
 				t.Errorf("No return error")
 			}
 
-			if _, err := NewEnigoma(correctPassForDef, f1, f2); err.Error() != "Too many arguments, given 2 expected 1" {
+			if _, err := NewEnigoma(correctPassForDef, f1, f2); err.Error() != "too many arguments, given 2 expected 1" {
 				t.Errorf("Not correct error message")
 			}
 		})

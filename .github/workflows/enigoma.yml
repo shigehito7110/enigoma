@@ -8,6 +8,8 @@ jobs:
     steps:
       - name: Set Up
         uses: actions/checkout@v2
+        with:
+          ref: ${{github.event.pull_request.head.ref}}
 
       - name: Test
         working-directory: ./src

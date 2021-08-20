@@ -25,7 +25,7 @@ func NewEnigoma(p string, vs ...validator) (*Enigoma, error){
 				e.Validator = v()
 			}
 		default:
-			return nil, fmt.Errorf("Too many arguments, given %d expected 1", len(vs))
+			return nil, fmt.Errorf("too many arguments, given %d expected 1", len(vs))
 	}
 
 	return e, nil
