@@ -30,7 +30,6 @@ jobs:
     steps:
       - uses: actions/checkout@v2
       - name: Lint
-        working-directory: ./src
         uses: golangci/golangci-lint-action@v2
         with:
           version: latest
