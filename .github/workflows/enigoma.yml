@@ -20,9 +20,17 @@ jobs:
         id: go
       - name: Checkout
         uses: actions/checkout@v2
+      - name: Install dependencies
+        run:  |
+          echo $HOME
+          pwd
+          go install honnef.co/go/tools/cmd/staticcheck@latest
+          ls $HOME/go/bin
       - name: Run build
         working-directory: ./src
-        run: go build .
+        run: |
+          ls $HOME/go/bin
+          go build .
 
   lint:
     needs: setup
@@ -32,8 +40,6 @@ jobs:
       - name: Lint
         working-directory: ./src
         run: |
-          go install honnef.co/go/tools/cmd/staticcheck@latest
-          ls $HOME/go/bin
           staticcheck ./...
 
   test:
