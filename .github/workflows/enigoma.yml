@@ -20,11 +20,6 @@ jobs:
         id: go
       - name: Checkout
         uses: actions/checkout@v2
-      - name: Install dependencies
-        run:  |
-          echo $HOME
-          pwd
-          ls $HOME/go/bin
       - name: Run build
         working-directory: ./src
         run: go build .
