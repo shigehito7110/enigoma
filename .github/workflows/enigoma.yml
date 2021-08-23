@@ -27,6 +27,8 @@ jobs:
         working-directory: ./src
         run: |
           ls /home/runner/go/bin
+          export PATH=$HOME/go/bin
+          staticcheck ./...
 
   lint:
     needs: setup
