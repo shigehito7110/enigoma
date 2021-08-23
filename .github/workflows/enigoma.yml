@@ -20,11 +20,13 @@ jobs:
         id: go
       - name: Checkout
         uses: actions/checkout@v2
-      # - name: Install dependencies
-      #   run:  |
-      #     go install honnef.co/go/tools/cmd/staticcheck@latest
-      #     export GOPATH=$HOME/go
-      #     export PATH=$HOME:$GOPATH/bin
+      - name: Install dependencies
+        working-directory: ./src
+        run:  |
+          go install honnef.co/go/tools/cmd/staticcheck@latest
+          export GOPATH=$HOME/go
+          export PATH=$HOME:$GOPATH/bin
+          staticcheck ./...
       # - name: Run build
       #   working-directory: ./src
       #   run: |
