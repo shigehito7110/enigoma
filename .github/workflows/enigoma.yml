@@ -20,18 +20,16 @@ jobs:
         id: go
       - name: Checkout
         uses: actions/checkout@v2
-      - name: Install dependencies
-        run:  |
-          go install honnef.co/go/tools/cmd/staticcheck@latest
-          export GOPATH=$HOME/go
-          export PATH=$HOME:$GOPATH/bin
-          echo $GOPATH
-          echo $PATH
-      - name: Run build
-        working-directory: ./src
-        run: |
-          echo $GOPATH
-          echo $PATH
+      # - name: Install dependencies
+      #   run:  |
+      #     go install honnef.co/go/tools/cmd/staticcheck@latest
+      #     export GOPATH=$HOME/go
+      #     export PATH=$HOME:$GOPATH/bin
+      # - name: Run build
+      #   working-directory: ./src
+      #   run: |
+      #     echo $GOPATH
+      #     echo $PATH
 
   lint:
     needs: setup
@@ -41,6 +39,9 @@ jobs:
       - name: Lint
         working-directory: ./src
         run: |
+          go install honnef.co/go/tools/cmd/staticcheck@latest
+          export GOPATH=$HOME/go
+          export PATH=$HOME:$GOPATH/bin
           staticcheck ./...
 
   test:
