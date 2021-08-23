@@ -18,19 +18,19 @@ func (v *DefaultPasswordValidator) Validate(p string) bool {
 	number    := regexp.MustCompile(`.*?\d+`)
 	mix       := regexp.MustCompile(`^([a-z]|\d|[A-Z]){8,100}$`)
 
-	if result := lowercase.MatchString(p); result == false {
+	if result := lowercase.MatchString(p); !result {
 		return false
 	}
 
-	if result := uppercase.MatchString(p); result == false {
+	if result := uppercase.MatchString(p); !result {
 		return false
 	}
 
-	if result := number.MatchString(p); result == false {
+	if result := number.MatchString(p); !result {
 		return false
 	}
 
-	if result := mix.MatchString(p); result == false {
+	if result := mix.MatchString(p); !result {
 		return false
 	}
 
