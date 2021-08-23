@@ -26,10 +26,11 @@ jobs:
       - name: Run build
         working-directory: ./src
         run: |
-          ls /home/runner/go/bin
           export GOPATH=$HOME/go
           export PATH=$HOME:$GOPATH/bin
-          staticcheck ./...
+          ls $PATH
+          which go
+          staticcheck
 
   lint:
     needs: setup
