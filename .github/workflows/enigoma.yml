@@ -27,10 +27,10 @@ jobs:
     steps:
       - uses: actions/checkout@v2
       - name: Install golangci-lint
-      run: |
-        curl -sfL https://install.goreleaser.com/github.com/golangci/golangci-lint.sh | sh -s v1.17.1
-        # https://github.com/golangci/golangci-lint/issues/250
-        sudo mv ./bin/golangci-lint $GOPATH/bin/
+        run: |
+          curl -sfL https://install.goreleaser.com/github.com/golangci/golangci-lint.sh | sh -s v1.17.1
+          # https://github.com/golangci/golangci-lint/issues/250
+          sudo mv ./bin/golangci-lint $GOPATH/bin/
       - name: Run golangci-lint
         run: |
           golangci-lint run \
