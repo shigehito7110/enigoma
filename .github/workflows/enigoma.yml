@@ -29,7 +29,6 @@ jobs:
       - name: Run build
         working-directory: ./src
         run: go build .
-      env:
 
   lint:
     needs: setup
