@@ -25,6 +25,8 @@ jobs:
           go install honnef.co/go/tools/cmd/staticcheck@latest
           export GOPATH=$HOME/go
           export PATH=$HOME:$GOPATH/bin
+          echo $GOPATH
+          echo $PATH
       - name: Run build
         working-directory: ./src
         run: |
