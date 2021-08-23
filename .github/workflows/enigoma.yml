@@ -29,6 +29,7 @@ jobs:
       - name: Run build
         working-directory: ./src
         run: go build .
+      env:
 
   lint:
     needs: setup
@@ -37,7 +38,9 @@ jobs:
       - uses: actions/checkout@v2
       - name: Lint
         working-directory: ./src
-        run: staticcheck ./...
+        run: |
+          ls $HOME/go/bin
+          staticcheck ./...
 
   test:
     needs: setup
