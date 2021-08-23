@@ -25,7 +25,7 @@ jobs:
           echo $HOME
           pwd
           go install honnef.co/go/tools/cmd/staticcheck@latest
-          ls $HOME
+          ls $HOME/go/bin
       - name: Run build
         working-directory: ./src
         run: go build .
