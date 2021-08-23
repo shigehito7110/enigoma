@@ -31,9 +31,7 @@ jobs:
           echo $GOPATH
           echo $PATH
           ls $PATH
-          which go
           echo "=====================
-          staticcheck
 
   lint:
     needs: setup
