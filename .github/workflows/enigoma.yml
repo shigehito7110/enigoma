@@ -23,9 +23,9 @@ jobs:
       - name: Install dependencies
         run:  |
           echo $HOME
-          ls $HOME
           pwd
           go install honnef.co/go/tools/cmd/staticcheck@latest
+          ls $HOME
       - name: Run build
         working-directory: ./src
         run: go build .
