@@ -28,7 +28,6 @@ jobs:
         run: |
           export PATH=/home/runner/go/bin
           staticcheck ./...
-          go build .
 
   lint:
     needs: setup
