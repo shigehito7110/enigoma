@@ -28,6 +28,8 @@ jobs:
         run: |
           export GOPATH=$HOME/go
           export PATH=$HOME:$GOPATH/bin
+          echo $GOPATH
+          echo $PATH
           ls $PATH
           which go
           staticcheck
