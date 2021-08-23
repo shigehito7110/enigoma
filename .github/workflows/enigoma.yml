@@ -24,7 +24,6 @@ jobs:
         run:  |
           echo $HOME
           pwd
-          go install honnef.co/go/tools/cmd/staticcheck@latest
           ls $HOME/go/bin
       - name: Run build
         working-directory: ./src
@@ -38,6 +37,7 @@ jobs:
       - name: Lint
         working-directory: ./src
         run: |
+          go install honnef.co/go/tools/cmd/staticcheck@latest
           ls $HOME/go/bin
           staticcheck ./...
 
