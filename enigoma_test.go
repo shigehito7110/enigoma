@@ -80,3 +80,53 @@ func TestEnigomaValidate(t *testing.T) {
 		})
 	})
 }
+
+func TestEnigomaCreateHash(t *testing.T) {
+	e, _ := NewEnigoma(correctPassForDef)
+	t.Run("Encryptioner/", func(t *testing.T) {
+		t.Run("DefaultValue", func(t *testing.T) {
+			if _, err := e.CreateHash(); err != nil {
+				t.Errorf("Return error")
+			}
+		})
+
+		t.Run("CustomValue", func(t *testing.T) {
+			t.Run("Success", func(t *testing.T) {
+				// for i := 4; i <= 31; i++ {
+				// 	if _, err := e.CreateHash(i); err != nil {
+				// 		t.Errorf("Return error")
+				// 	}
+				// }
+				if _, err := e.CreateHash(5); err != nil {
+					t.Errorf("Return error")
+				}
+			})
+
+			t.Run("Failure", func(t *testing.T) {
+				t.Run("numeber not include in 4-31", func(t *testing.T) {
+					if _, err := e.CreateHash(1); err == nil {
+						t.Errorf("Not return error")
+					}
+
+					if _, err := e.CreateHash(32); err == nil {
+						t.Errorf("Not return error")
+					}
+
+					// if _, err := e.CreateHash(1); err.Error() != "1 is invalid value, expect number include in 4-31" {
+					// 	t.Errorf("Not correct error message")
+					// }
+
+					// if _, err := e.CreateHash(32); err.Error() != "32 is invalid value, expect number include in 4-31" {
+					// 	t.Errorf("Not correct error message")
+					// }
+				})
+
+				t.Run("too  many arguments", func(t *testing.T) {
+					if _ ,err := e.CreateHash(3,4); err == nil {
+						t.Errorf("Not return error")
+					}
+				})
+			})
+		})
+	})
+}
