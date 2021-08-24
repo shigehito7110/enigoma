@@ -92,6 +92,7 @@ func TestEnigomaCreateHash(t *testing.T) {
 
 		t.Run("CustomValue", func(t *testing.T) {
 			t.Run("Success", func(t *testing.T) {
+				// TODO(shige): なぜかループ処理が走らないので修正後追加
 				// for i := 4; i <= 31; i++ {
 				// 	if _, err := e.CreateHash(i); err != nil {
 				// 		t.Errorf("Return error")
@@ -112,13 +113,13 @@ func TestEnigomaCreateHash(t *testing.T) {
 						t.Errorf("Not return error")
 					}
 
-					// if _, err := e.CreateHash(1); err.Error() != "1 is invalid value, expect number include in 4-31" {
-					// 	t.Errorf("Not correct error message")
-					// }
+					if _, err := e.CreateHash(1); err.Error() != "1 is invalid value, expect number include in 4-31" {
+						t.Errorf("Not correct error message")
+					}
 
-					// if _, err := e.CreateHash(32); err.Error() != "32 is invalid value, expect number include in 4-31" {
-					// 	t.Errorf("Not correct error message")
-					// }
+					if _, err := e.CreateHash(32); err.Error() != "32 is invalid value, expect number include in 4-31" {
+						t.Errorf("Not correct error message")
+					}
 				})
 
 				t.Run("too  many arguments", func(t *testing.T) {
