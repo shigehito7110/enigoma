@@ -40,9 +40,9 @@ e, _ := enigoma.NewEnigoma(<password>, func() enigoma.vl.Validator {
 
 |  uppercase  |  downcase  |  numbers  |
 | :---------: | :---------:| :-------: |
-|      ◯      |     ◯      |　    ◯    |
+|      ◯      |     ◯      |　   ◯      |
 
-8 to 100 words
+in 8 to 100 words
 
 * example
 ```go
