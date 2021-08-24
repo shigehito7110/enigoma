@@ -1,6 +1,6 @@
 # Enigoma
 ## introduction
-This is go package to hundle password(validate, convert hash, compaire hash and password).
+Enigoma is go package to hundle password(validate, convert to hash, compaire hash and password).
 
 golang v1.16
 
