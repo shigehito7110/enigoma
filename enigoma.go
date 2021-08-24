@@ -58,8 +58,7 @@ func (e *Enigoma) CreateHash(_i ...int) (string, error) {
 
 	h, err := e.Encryptioner.CreateHash(e.Password, i)
 	if err != nil {
-		//errorをwrapする
-		return "", fmt.Errorf("%s coudn't create hash", e.Password)
+		return "", err
 	}
 
 	return h, nil
