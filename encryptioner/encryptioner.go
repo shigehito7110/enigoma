@@ -20,3 +20,13 @@ func (e *Encryptioner) CreateHash(p string, i int) (string, error) {
 
 	return string(hash), nil
 }
+
+func (e *Encryptioner) Check(hp, p string) error {
+	password 		 := []byte(p)
+	hashpassword := []byte(hp)
+	if err := bcrypt.CompareHashAndPassword(hashpassword, password); err != nil {
+		return fmt.Errorf("%s is not correct password", p)
+	}
+
+	return nil
+}
