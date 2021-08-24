@@ -76,3 +76,11 @@ func (e *Enigoma) Run(_i ...int) (string, error) {
 
 	return h, nil
 }
+
+func (e *Enigoma) Check(hp string) error {
+	if result := e.Encryptioner.Check(hp, e.Password); !result {
+		return fmt.Errorf("%s is not correct password", e.Password)
+	}
+
+	return nil
+}
