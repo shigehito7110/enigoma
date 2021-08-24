@@ -7,8 +7,8 @@ import(
 )
 
 type Enigoma struct {
-	Password 		 string
-	Validator 	 vl.Validator
+	Password     string
+	Validator    vl.Validator
 	Encryptioner *en.Encryptioner
 }
 
@@ -16,7 +16,7 @@ type validator func() vl.Validator
 
 func NewEnigoma(p string, vs ...validator) (*Enigoma, error){
 	en := new(en.Encryptioner)
-	e := &Enigoma{
+	e  := &Enigoma{
 		Password: p,
 		Encryptioner: en,
 	}
@@ -46,14 +46,14 @@ func (e *Enigoma) Validate() error {
 func (e *Enigoma) CreateHash(_i ...int) (string, error) {
 	var i int
 	switch(len(_i)) {
-	case 0:
-		i = 10
-	case 1:
-		for _, val := range _i {
-			i = val
-		}
-	default:
-		return "", fmt.Errorf("too many arguments, given %d expected 1", len(_i))
+		case 0:
+			i = 10
+		case 1:
+			for _, val := range _i {
+				i = val
+			}
+		default:
+			return "", fmt.Errorf("too many arguments, given %d expected 1", len(_i))
 	}
 
 	h, err := e.Encryptioner.CreateHash(e.Password, i)
