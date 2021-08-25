@@ -1,5 +1,5 @@
 # Enigoma
-## introduction
+## Introduction
 Enigoma is go package to hundle password(validate, convert to hash, compaire hash and password).
 
 golang v1.16
@@ -47,5 +47,5 @@ in 8 to 100 words
 * example
 ```go
 password // invalid
-Password123 // correct
+Password123 // valid
 ```
