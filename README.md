@@ -4,7 +4,7 @@ Enigoma is go package to hundle password(validate, convert to hash, compaire has
 
 golang v1.16
 
-##Usage
+## Usage
 * use default validator func
 ```go
 e, _ := enigoma.NewEnigoma(<password>)
@@ -39,8 +39,8 @@ e, _ := enigoma.NewEnigoma(<password>, func() enigoma.vl.Validator {
 ## Default Validator
 
 |  uppercase  |  downcase  |  numbers  |
-| :---------: | :---------:| :-------: |
-|      ◯      |     ◯      |　   ◯      |
+| :---------: | :---------:| :--------:|
+|      ◯      |     ◯      |     ◯     |
 
 in 8 to 100 words
 
