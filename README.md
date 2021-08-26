@@ -30,7 +30,7 @@ func (c *CustomValidator) Validate(p string) bool {
 }
 
 e, _ := enigoma.NewEnigoma(<password>, func() enigoma.vl.Validator {
-  return &customValidator{
+  return &CustomValidator{
     // each fields
   }
 })
